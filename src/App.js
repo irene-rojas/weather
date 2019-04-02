@@ -9,13 +9,9 @@ class App extends Component {
         lng: ""
     }
 
-
-    // git remote add origin git@github.com:irene-rojas/weather.git
-// git push -u origin master
-
     componentDidMount() {
         this.getLocation();
-        this.apiCall();
+        // this.apiCall();
     }
 
     getLocation = () => {
@@ -30,7 +26,7 @@ class App extends Component {
     apiCall = () => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
         .then(res => {
-            const result = res.data[0];
+            const result = res.data;
             console.log(result);
         })
     }
