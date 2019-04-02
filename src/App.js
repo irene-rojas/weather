@@ -11,7 +11,7 @@ class App extends Component {
 
     componentDidMount() {
         this.getLocation();
-        // this.apiCall();
+        this.apiCall();
     }
 
     getLocation = () => {
@@ -19,12 +19,16 @@ class App extends Component {
             this.setState({
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
+            }, () => {
+                console.log("");
+                // callback to update in real time
             }); 
-        })
+        });
     }
 
+    // https://cors-anywhere.herokuapp.com/
     apiCall = () => {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
+        axios.get(`https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
         .then(res => {
             const result = res.data;
             console.log(result);
