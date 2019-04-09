@@ -50,6 +50,7 @@ class App extends Component {
         })
     }
 
+
   render() {
     return (
       <div className="App">
@@ -61,6 +62,7 @@ class App extends Component {
             summary={this.state.currentWeather.summary}
             temp={this.state.currentWeather.temperature}
             feels={this.state.currentWeather.apparentTemperature}
+            icon={this.state.currentWeather.icon}
         />
 
         <br/>
