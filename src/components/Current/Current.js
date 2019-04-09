@@ -24,7 +24,7 @@ const Current = (props) => {
             <br/>
             <strong>Feels like:</strong> {parseInt(props.feels)}° F
             <br/>
-            <img src={props.icon} alt={props.icon}/> 
+            <img src={props.icon} alt={props.icon} /> 
         </div>
 
     )

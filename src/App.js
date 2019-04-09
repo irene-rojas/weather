@@ -25,7 +25,7 @@ class App extends Component {
         dailyWeather: [],
         dailyTomorrow: [],
         dailyDayAfter: [],
-        currentIcon: null
+        currentIcon: ""
     }
 
     componentDidMount() {
@@ -59,12 +59,11 @@ class App extends Component {
                 dailyTomorrow: result.daily.data[0],
                 dailyDayAfter: result.daily.data[1]
             });
-            const icon = this.state.currentWeather.icon.replace(/\s/g, '');
-            const iconSVG = icon.svg;
-            this.setState({
-                currentIcon: iconSVG
-            });
-            
+            // const icon = this.state.currentWeather.icon;
+            // const iconSVG = icon.svg;
+            // this.setState({
+            //     currentIcon: iconSVG
+            // });
         })
     }
 
@@ -80,7 +79,7 @@ class App extends Component {
             summary={this.state.currentWeather.summary}
             temp={this.state.currentWeather.temperature}
             feels={this.state.currentWeather.apparentTemperature}
-            icon={`${this.state.currentWeather.icon}.svg`}
+            icon={this.state.currentWeather.icon}
         />
 
         <br/>
