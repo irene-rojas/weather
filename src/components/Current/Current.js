@@ -1,4 +1,15 @@
 import React from 'react';
+import "./icons/clear-day.svg";
+import "./icons/clear-night.svg";
+import "./icons/cloudy.svg";
+import "./icons/fog.svg";
+import "./icons/partly-cloudy-day.svg";
+import "./icons/partly-cloudy-night.svg";
+import "./icons/rain.svg";
+import "./icons/sleet.svg";
+import "./icons/snow.svg";
+import "./icons/wind.svg";
+
 
 const Current = (props) => {
 
@@ -13,9 +24,7 @@ const Current = (props) => {
             <br/>
             <strong>Feels like:</strong> {parseInt(props.feels)}° F
             <br/>
-            Icon name: {props.icon}
-            <br/>
-            <img src={props.icon} alt="weather icon"/>
+            <img src={toString(props.icon)} alt={props.icon} /> 
         </div>
 
     )
