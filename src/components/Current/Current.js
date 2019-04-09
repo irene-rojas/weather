@@ -1,14 +1,14 @@
 import React from 'react';
-import "./icons/clear-day.svg";
-import "./icons/clear-night.svg";
-import "./icons/cloudy.svg";
-import "./icons/fog.svg";
-import "./icons/partly-cloudy-day.svg";
-import "./icons/partly-cloudy-night.svg";
-import "./icons/rain.svg";
-import "./icons/sleet.svg";
-import "./icons/snow.svg";
-import "./icons/wind.svg";
+import clearday from "./icons/clear-day.png";
+import clearnight from "./icons/clear-night.png";
+import cloudy from "./icons/cloudy.png";
+import fog from "./icons/fog.png";
+import partlycloudyday from"./icons/partly-cloudy-day.png";
+import partlycloudynight from "./icons/partly-cloudy-night.png";
+import rain from "./icons/rain.png";
+import sleet from "./icons/sleet.png";
+import snow from "./icons/snow.png";
+import wind from "./icons/wind.png";
 
 
 const Current = (props) => {

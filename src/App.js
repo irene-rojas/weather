@@ -53,17 +53,12 @@ class App extends Component {
             console.log(result);
             this.setState({
                 currentWeather: result.currently,
-                // currentIcon: result.currently.icon.replace(/\s/g,'-'),
+                currentIcon: result.currently.icon.replace(/\s/g,''),
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
                 dailyTomorrow: result.daily.data[0],
                 dailyDayAfter: result.daily.data[1]
             });
-            // const icon = this.state.currentWeather.icon;
-            // const iconSVG = icon.svg;
-            // this.setState({
-            //     currentIcon: iconSVG
-            // });
         })
     }
 
