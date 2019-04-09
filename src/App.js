@@ -4,6 +4,16 @@ import axios from 'axios';
 import Current from "./components/Current/Current";
 import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
+import "./icons/clear-day.svg";
+import "./icons/clear-night.svg";
+import "./icons/cloudy.svg";
+import "./icons/fog.svg";
+import "./icons/partly-cloudy-day.svg";
+import "./icons/partly-cloudy-night.svg";
+import "./icons/rain.svg";
+import "./icons/sleet.svg";
+import "./icons/snow.svg";
+import "./icons/wind.svg";
 
 class App extends Component {
 
@@ -14,7 +24,8 @@ class App extends Component {
         hourlyWeather: [],
         dailyWeather: [],
         dailyTomorrow: [],
-        dailyDayAfter: []
+        dailyDayAfter: [],
+        // currentIcon: "".replace(/\s/g,'-')
     }
 
     componentDidMount() {
@@ -42,6 +53,7 @@ class App extends Component {
             console.log(result);
             this.setState({
                 currentWeather: result.currently,
+                // currentIcon: result.currently.icon,
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
                 dailyTomorrow: result.daily.data[0],
