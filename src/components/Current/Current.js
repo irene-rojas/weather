@@ -1,10 +1,10 @@
 import React from 'react';
-import clearday from "./icons/clear-day.png";
-import clearnight from "./icons/clear-night.png";
+import clearday from "./icons/clearday.png";
+import clearnight from "./icons/clearnight.png";
 import cloudy from "./icons/cloudy.png";
 import fog from "./icons/fog.png";
-import partlycloudyday from"./icons/partly-cloudy-day.png";
-import partlycloudynight from "./icons/partly-cloudy-night.png";
+import partlycloudyday from"./icons/partlycloudyday.png";
+import partlycloudynight from "./icons/partlycloudynight.png";
 import rain from "./icons/rain.png";
 import sleet from "./icons/sleet.png";
 import snow from "./icons/snow.png";
@@ -24,7 +24,8 @@ const Current = (props) => {
             <br/>
             <strong>Feels like:</strong> {parseInt(props.feels)}° F
             <br/>
-            <img src={props.icon} alt={props.icon} /> 
+            <br/>
+            <img src={props.icon} alt={props.icon} height="64px"/> 
         </div>
 
     )
