@@ -25,7 +25,7 @@ class App extends Component {
         dailyWeather: [],
         dailyTomorrow: [],
         dailyDayAfter: [],
-        currentIcon: null
+        currentIcon: ""
     }
 
     componentDidMount() {
