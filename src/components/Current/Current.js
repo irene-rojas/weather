@@ -1,15 +1,4 @@
 import React from 'react';
-// import clearday from "./icons/clearday.png";
-// import clearnight from "./icons/clearnight.png";
-// import cloudy from "./icons/cloudy.png";
-// import fog from "./icons/fog.png";
-// import partlycloudyday from"./icons/partlycloudyday.png";
-// import partlycloudynight from "./icons/partlycloudynight.png";
-// import rain from "./icons/rain.png";
-// import sleet from "./icons/sleet.png";
-// import snow from "./icons/snow.png";
-// import wind from "./icons/wind.png";
-
 
 const Current = (props) => {
 
