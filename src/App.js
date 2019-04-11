@@ -15,7 +15,8 @@ class App extends Component {
         dailyWeather: [],
         dailyTomorrow: [],
         dailyDayAfter: [],
-        currentIcon: ""
+        currentIcon: "",
+        currentIconAlt: ""
     }
 
     componentDidMount() {
@@ -44,6 +45,7 @@ class App extends Component {
             this.setState({
                 currentWeather: result.currently,
                 currentIcon: require(`./components/Current/icons/${result.currently.icon.replace(/-/gi,'')}.png`),
+                currentIconAlt: result.currently.icon,
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
                 dailyTomorrow: result.daily.data[0],
@@ -66,6 +68,7 @@ class App extends Component {
             temp={this.state.currentWeather.temperature}
             feels={this.state.currentWeather.apparentTemperature}
             icon={this.state.currentIcon}
+            iconAlt={this.state.currentIconAlt}
         />
 
         <br/>
