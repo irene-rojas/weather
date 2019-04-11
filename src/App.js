@@ -43,12 +43,13 @@ class App extends Component {
             console.log(result);
             this.setState({
                 currentWeather: result.currently,
-                currentIcon: result.currently.icon.replace(/-/gi,''),
+                currentIcon: require(`./components/Current/icons/${result.currently.icon.replace(/-/gi,'')}.png`),
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
                 dailyTomorrow: result.daily.data[0],
                 dailyDayAfter: result.daily.data[1]
             });
+            console.log(this.state.currentIcon);
         })
     }
 
