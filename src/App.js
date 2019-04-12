@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Current from "./components/Current/Current";
-import Hourly from "./components/Hourly/Hourly";
+// import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
 import moment from 'moment';
 
 class App extends Component {
 
     state = {
+        // location
         lat: "",
         lng: "",
+        // current
         currentWeather: [],
-        hourlyWeather: [],
-        dailyWeather: [],
-        dailyTomorrow: [],
-        dailyDayAfter: [],
         currentIcon: "",
         currentIconAlt: "",
         currentUnixTime: "",
-        currentTime: ""
+        currentDate: "",
+        // daily summary
+        dailyWeather: [],
+        // daily - tomorrow
+        tomorrowWeather: [],
+        tomorrowIcon: "",
+        tomorrowIconAlt: "",
+        tomorrowUnixTime: "",
+        tomorrowDate: "",
+        // daily - day after
+        dailyDayAfter: [],
+        // hourly
+        hourlyWeather: [],
     }
 
     componentDidMount() {
@@ -45,24 +55,35 @@ class App extends Component {
             const result = res.data;
             console.log(result);
             this.setState({
+                // current
                 currentWeather: result.currently,
                 currentIcon: require(`./components/Current/icons/${result.currently.icon}.png`),
                 currentIconAlt: result.currently.icon,
                 currentUnixTime: result.currently.time,
+                // hourly
                 hourlyWeather: result.hourly,
+                // daily - summary
                 dailyWeather: result.daily,
-                dailyTomorrow: result.daily.data[1],
+                // daily - tomorrow
+                tomorrowWeather: result.daily.data[1],
+                tomorrowIcon: require(`./components/Daily/icons/${result.daily.data[1].icon}.png`),
+                tomorrowIconAlt: result.daily.data[1].icon,
+                tomorrowUnixTime: result.daily.data[1].time,
+
+                // ----------------
                 dailyDayAfter: result.daily.data[2]
             });
-            this.getCurrentDate();
+            this.getDates();
         })
     }
 
-    getCurrentDate = () => {
-        const currentUnix = this.state.currentUnixTime;
-        const now = moment.unix(currentUnix).format('LL');
+    getDates = () => {
+        // const currentUnix = this.state.currentUnixTime;
+        const today = moment.unix(this.state.currentUnixTime).format('LL');
+        const tomorrow = moment.unix(this.state.tomorrowUnixTime).format('LL');
         this.setState({
-            currentTime: now
+            currentDate: today,
+            tomorrowDate: tomorrow
         });
     }
 
@@ -79,7 +100,7 @@ class App extends Component {
             feels={this.state.currentWeather.apparentTemperature}
             icon={this.state.currentIcon}
             iconAlt={this.state.currentIconAlt}
-            time={this.state.currentTime}
+            time={this.state.currentDate}
         />
 
         <br/>
@@ -87,16 +108,17 @@ class App extends Component {
 
         <Daily 
             summary={this.state.dailyWeather.summary}
-            tomorrow={this.state.dailyTomorrow.summary}
+            tomorrowDate={this.state.tomorrowDate}
+            tomorrow={this.state.tomorrowWeather.summary}
             dayAfter={this.state.dailyDayAfter.summary}
         />
 
         <br/>
         <br/>
 
-        <Hourly 
+        {/* <Hourly 
             summary={this.state.hourlyWeather.summary}
-        />
+        /> */}
 
         <br/>
         <br/>

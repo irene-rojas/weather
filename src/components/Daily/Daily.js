@@ -9,8 +9,9 @@ const Daily = (props) => {
             <br/>
             <strong>Summary:</strong> {props.summary}
             <br/>
+            <br/>
             <div>
-                <strong>Tomorrow:</strong> {props.tomorrow}
+                <strong>{props.tomorrowDate}</strong> {props.tomorrow}
             </div>
             
             <br/>
