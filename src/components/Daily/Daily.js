@@ -16,7 +16,7 @@ const Daily = (props) => {
             
             <br/>
             <div>
-                <strong>Day After:</strong> {props.dayAfter}
+                <strong>{props.nextDayDate}</strong> {props.nextDay}
             </div>
             
             {/* Find way to autopopulate days */}

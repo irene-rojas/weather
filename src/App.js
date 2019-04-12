@@ -26,8 +26,11 @@ class App extends Component {
         tomorrowIconAlt: "",
         tomorrowUnixTime: "",
         tomorrowDate: "",
-        // daily - day after
-        dailyDayAfter: [],
+        // daily - next day
+        nextDay: [],
+        nextDayIcon: "",
+        nextDayIconAlt: "",
+        nextDayUnixTime: "",
         // hourly
         hourlyWeather: [],
     }
@@ -69,9 +72,12 @@ class App extends Component {
                 tomorrowIcon: require(`./components/Daily/icons/${result.daily.data[1].icon}.png`),
                 tomorrowIconAlt: result.daily.data[1].icon,
                 tomorrowUnixTime: result.daily.data[1].time,
-
                 // ----------------
-                dailyDayAfter: result.daily.data[2]
+                nextDay: result.daily.data[2],
+                nextDayIcon: require(`./components/Daily/icons/${result.daily.data[2].icon}.png`),
+                nextDayIconAlt: result.daily.data[2].icon,
+                nextDayUnixTime: result.daily.data[2].time,
+
             });
             this.getDates();
         })
@@ -81,9 +87,11 @@ class App extends Component {
         // const currentUnix = this.state.currentUnixTime;
         const today = moment.unix(this.state.currentUnixTime).format('LL');
         const tomorrow = moment.unix(this.state.tomorrowUnixTime).format('LL');
+        const nextDay = moment.unix(this.state.nextDayUnixTime).format('LL');
         this.setState({
             currentDate: today,
-            tomorrowDate: tomorrow
+            tomorrowDate: tomorrow,
+            nextDayDate: nextDay
         });
     }
 
@@ -110,7 +118,8 @@ class App extends Component {
             summary={this.state.dailyWeather.summary}
             tomorrowDate={this.state.tomorrowDate}
             tomorrow={this.state.tomorrowWeather.summary}
-            dayAfter={this.state.dailyDayAfter.summary}
+            nextDayDate={this.state.nextDayDate}
+            nextDay={this.state.nextDay.summary}
         />
 
         <br/>
