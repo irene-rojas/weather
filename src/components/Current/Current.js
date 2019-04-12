@@ -16,7 +16,7 @@ const Current = (props) => {
             <br/>
             <img src={props.icon} alt={props.iconAlt} height="64px"/> 
         </div>
-
+        
     )
 }
 
