@@ -39,8 +39,6 @@ const Daily = (props) => {
         
         <div className="dayThree>
         </div>
-            
-        </div>
 
     )
 }
