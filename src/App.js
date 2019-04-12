@@ -4,6 +4,7 @@ import axios from 'axios';
 import Current from "./components/Current/Current";
 import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
+import moment from 'moment';
 
 class App extends Component {
 
@@ -32,7 +33,6 @@ class App extends Component {
                 // console.log("");
                 // callback to update in real time
                 this.apiCall();
-                // this.getDate();
             }); 
         });
     }
@@ -46,18 +46,20 @@ class App extends Component {
                 currentWeather: result.currently,
                 currentIcon: require(`./components/Current/icons/${result.currently.icon}.png`),
                 currentIconAlt: result.currently.icon,
+                currentTime: result.currently.time,
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
-                dailyTomorrow: result.daily.data[0],
-                dailyDayAfter: result.daily.data[1]
+                dailyTomorrow: result.daily.data[1],
+                dailyDayAfter: result.daily.data[2]
             });
-            console.log(this.state.currentIcon);
+            this.getCurrentDate();
         })
     }
 
-    getDate = () => {
-        var ts = new Date();
-        console.log(ts.toLocaleDateString());
+    getCurrentDate = () => {
+        const currentUnix = this.state.currentTime;
+        const now = moment.unix(currentUnix);
+        console.log(now._d);
     }
 
   render() {
