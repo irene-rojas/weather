@@ -1,17 +1,17 @@
 import React from 'react';
 import './Daily.css';
 
-
 const Daily = (props) => {
 
     return (
 
         <div>
-            <strong>Daily Forecast:</strong>
+            <strong>Three Day Forecast:</strong>
             <br/>
             <strong>Summary:</strong> {props.summary}
             <br/>
             <br/>
+        
             <div className="dayOne">
                 <strong>{props.day1Date}</strong> 
                 <br/>
@@ -20,7 +20,7 @@ const Daily = (props) => {
                 <strong>Feels like:</strong> {parseInt(props.day1Feels)}° F
                 <br/>
                 <br/>
-                <img src={props.day1Icon} alt={props.day1IconAlt} height="64px"/> 
+                <img src={props.day1Icon} alt={props.day1IconAlt} height="32px"/> 
             </div>
             
             <br/>
@@ -34,11 +34,12 @@ const Daily = (props) => {
                 <strong>Feels like:</strong> {parseInt(props.day1Feels)}° F
                 <br/>
                 <br/>
-                <img src={props.day1Icon} alt={props.day1IconAlt} height="64px"/> 
-
+                <img src={props.day1Icon} alt={props.day1IconAlt} height="32px"/> 
             </div>
+        
+        <div className="dayThree>
+        </div>
             
-            {/* Find way to autopopulate days */}
         </div>
 
     )
