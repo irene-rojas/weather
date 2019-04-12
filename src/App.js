@@ -32,11 +32,11 @@ class App extends Component {
                 // console.log("");
                 // callback to update in real time
                 this.apiCall();
+                // this.getDate();
             }); 
         });
     }
 
-    // https://cors-anywhere.herokuapp.com/
     apiCall = () => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
         .then(res => {
@@ -55,6 +55,10 @@ class App extends Component {
         })
     }
 
+    getDate = () => {
+        var ts = new Date();
+        console.log(ts.toLocaleDateString());
+    }
 
   render() {
     return (
