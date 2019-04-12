@@ -17,7 +17,9 @@ class App extends Component {
         dailyTomorrow: [],
         dailyDayAfter: [],
         currentIcon: "",
-        currentIconAlt: ""
+        currentIconAlt: "",
+        currentUnixTime: "",
+        currentTime: ""
     }
 
     componentDidMount() {
@@ -46,7 +48,7 @@ class App extends Component {
                 currentWeather: result.currently,
                 currentIcon: require(`./components/Current/icons/${result.currently.icon}.png`),
                 currentIconAlt: result.currently.icon,
-                currentTime: result.currently.time,
+                currentUnixTime: result.currently.time,
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
                 dailyTomorrow: result.daily.data[1],
@@ -57,9 +59,11 @@ class App extends Component {
     }
 
     getCurrentDate = () => {
-        const currentUnix = this.state.currentTime;
-        const now = moment.unix(currentUnix);
-        console.log(now._d);
+        const currentUnix = this.state.currentUnixTime;
+        const now = moment.unix(currentUnix).format('LL');
+        this.setState({
+            currentTime: now
+        });
     }
 
   render() {
@@ -75,6 +79,7 @@ class App extends Component {
             feels={this.state.currentWeather.apparentTemperature}
             icon={this.state.currentIcon}
             iconAlt={this.state.currentIconAlt}
+            time={this.state.currentTime}
         />
 
         <br/>

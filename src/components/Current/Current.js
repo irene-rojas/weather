@@ -5,6 +5,8 @@ const Current = (props) => {
     return (
 
         <div>
+            <strong>{props.time}</strong>
+            <br/>
             <strong>Current weather:</strong>
             <br/>
             <strong>Summary:</strong> {props.summary}
