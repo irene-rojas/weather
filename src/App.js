@@ -21,16 +21,18 @@ class App extends Component {
         // daily summary
         dailyWeather: [],
         // daily - tomorrow
-        tomorrowWeather: [],
-        tomorrowIcon: "",
-        tomorrowIconAlt: "",
-        tomorrowUnixTime: "",
-        tomorrowDate: "",
+        day1Weather: [],
+        day1Icon: "",
+        day1IconAlt: "",
+        day1UnixTime: "",
+        day1Date: "",
         // daily - next day
-        nextDay: [],
-        nextDayIcon: "",
-        nextDayIconAlt: "",
-        nextDayUnixTime: "",
+        day2Weather: [],
+        day2Icon: "",
+        day2IconAlt: "",
+        day2UnixTime: "",
+        day2Date: "",
+
         // hourly
         hourlyWeather: [],
     }
@@ -63,21 +65,20 @@ class App extends Component {
                 currentIcon: require(`./components/Current/icons/${result.currently.icon}.png`),
                 currentIconAlt: result.currently.icon,
                 currentUnixTime: result.currently.time,
-                // hourly
-                hourlyWeather: result.hourly,
                 // daily - summary
                 dailyWeather: result.daily,
-                // daily - tomorrow
-                tomorrowWeather: result.daily.data[1],
-                tomorrowIcon: require(`./components/Daily/icons/${result.daily.data[1].icon}.png`),
-                tomorrowIconAlt: result.daily.data[1].icon,
-                tomorrowUnixTime: result.daily.data[1].time,
+                // daily - day1
+                day1Weather: result.daily.data[1],
+                day1Icon: require(`./components/Daily/icons/${result.daily.data[1].icon}.png`),
+                day1IconAlt: result.daily.data[1].icon,
+                day1UnixTime: result.daily.data[1].time,
                 // ----------------
-                nextDay: result.daily.data[2],
-                nextDayIcon: require(`./components/Daily/icons/${result.daily.data[2].icon}.png`),
-                nextDayIconAlt: result.daily.data[2].icon,
-                nextDayUnixTime: result.daily.data[2].time,
-
+                day2Weather: result.daily.data[2],
+                day2WeatherIcon: require(`./components/Daily/icons/${result.daily.data[2].icon}.png`),
+                day2WeatherIconAlt: result.daily.data[2].icon,
+                day2WeatherUnixTime: result.daily.data[2].time,
+                // hourly
+                hourlyWeather: result.hourly,
             });
             this.getDates();
         })
@@ -86,12 +87,12 @@ class App extends Component {
     getDates = () => {
         // const currentUnix = this.state.currentUnixTime;
         const today = moment.unix(this.state.currentUnixTime).format('LL');
-        const tomorrow = moment.unix(this.state.tomorrowUnixTime).format('LL');
-        const nextDay = moment.unix(this.state.nextDayUnixTime).format('LL');
+        const day1Date = moment.unix(this.state.day1UnixTime).format('LL');
+        const day2Date = moment.unix(this.state.day2WeatherUnixTime).format('LL');
         this.setState({
             currentDate: today,
-            tomorrowDate: tomorrow,
-            nextDayDate: nextDay
+            day1Date: day1Date,
+            day2Date: day2Date
         });
     }
 
@@ -116,10 +117,21 @@ class App extends Component {
 
         <Daily 
             summary={this.state.dailyWeather.summary}
-            tomorrowDate={this.state.tomorrowDate}
-            tomorrow={this.state.tomorrowWeather.summary}
-            nextDayDate={this.state.nextDayDate}
-            nextDay={this.state.nextDay.summary}
+
+            day1Date={this.state.day1Date}
+            day1Weather={this.state.day1Weather.summary}
+            day1Temp={this.state.day1Weather.temperatureHigh}
+            day1Feels={this.state.day1Weather.apparentTemperatureHigh}
+            day1Icon={this.state.day1Icon}
+            day1IconAlt={this.state.day1IconAlt}
+
+            day2Date={this.state.day2Date}
+            day2Weather={this.state.day2Weather.summary}
+            day2Temp={this.state.day2Weather.temperatureHigh}
+            day2Feels={this.state.day2Weather.apparentTemperatureHigh}
+            day2Icon={this.state.day2Icon}
+            day2IconAlt={this.state.day2IconAlt}
+
         />
 
         <br/>
