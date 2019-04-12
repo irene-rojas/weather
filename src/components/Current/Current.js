@@ -1,9 +1,7 @@
 import React from 'react';
 import './Current.css';
 
-
 const Current = (props) => {
-
     return (
 
         <div className="currentWeather">
