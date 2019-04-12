@@ -37,9 +37,6 @@ const Daily = (props) => {
                 <img src={props.day1Icon} alt={props.day1IconAlt} height="32px"/> 
             </div>
         
-        <div className="dayThree>
-        </div>
-
     )
 }
 
