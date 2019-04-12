@@ -1,13 +1,13 @@
 import React from 'react';
+import './Current.css';
+
 
 const Current = (props) => {
 
     return (
 
-        <div>
+        <div className="currentWeather">
             <strong>{props.time}</strong>
-            <br/>
-            <strong>Current weather:</strong>
             <br/>
             <strong>Summary:</strong> {props.summary}
             <br/>
