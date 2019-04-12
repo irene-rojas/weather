@@ -4,6 +4,7 @@ import axios from 'axios';
 import Current from "./components/Current/Current";
 import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
+import moment from 'moment';
 
 class App extends Component {
 
@@ -16,7 +17,9 @@ class App extends Component {
         dailyTomorrow: [],
         dailyDayAfter: [],
         currentIcon: "",
-        currentIconAlt: ""
+        currentIconAlt: "",
+        currentUnixTime: "",
+        currentTime: ""
     }
 
     componentDidMount() {
@@ -36,7 +39,6 @@ class App extends Component {
         });
     }
 
-    // https://cors-anywhere.herokuapp.com/
     apiCall = () => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
         .then(res => {
@@ -46,15 +48,23 @@ class App extends Component {
                 currentWeather: result.currently,
                 currentIcon: require(`./components/Current/icons/${result.currently.icon}.png`),
                 currentIconAlt: result.currently.icon,
+                currentUnixTime: result.currently.time,
                 hourlyWeather: result.hourly,
                 dailyWeather: result.daily,
-                dailyTomorrow: result.daily.data[0],
-                dailyDayAfter: result.daily.data[1]
+                dailyTomorrow: result.daily.data[1],
+                dailyDayAfter: result.daily.data[2]
             });
-            console.log(this.state.currentIcon);
+            this.getCurrentDate();
         })
     }
 
+    getCurrentDate = () => {
+        const currentUnix = this.state.currentUnixTime;
+        const now = moment.unix(currentUnix).format('LL');
+        this.setState({
+            currentTime: now
+        });
+    }
 
   render() {
     return (
@@ -69,6 +79,7 @@ class App extends Component {
             feels={this.state.currentWeather.apparentTemperature}
             icon={this.state.currentIcon}
             iconAlt={this.state.currentIconAlt}
+            time={this.state.currentTime}
         />
 
         <br/>

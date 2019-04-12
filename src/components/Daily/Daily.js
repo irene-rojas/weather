@@ -9,9 +9,15 @@ const Daily = (props) => {
             <br/>
             <strong>Summary:</strong> {props.summary}
             <br/>
-            <strong>Tomorrow:</strong> {props.tomorrow}
+            <div>
+                <strong>Tomorrow:</strong> {props.tomorrow}
+            </div>
+            
             <br/>
-            <strong>Day After:</strong> {props.dayAfter}
+            <div>
+                <strong>Day After:</strong> {props.dayAfter}
+            </div>
+            
             {/* Find way to autopopulate days */}
         </div>
 
