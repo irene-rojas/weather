@@ -36,7 +36,7 @@ const Daily = (props) => {
                 <br/>
                 <img src={props.day1Icon} alt={props.day1IconAlt} height="32px"/> 
             </div>
-        
+        </div>
     )
 }
 
