@@ -119,8 +119,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h4>Latitude: {this.state.lat}</h4>
-        <h4>Longitude: {this.state.lng}</h4>
+        <h1>Weather</h1>
 
         <Current 
             summary={this.state.currentWeather.summary}
@@ -135,8 +134,6 @@ class App extends Component {
         <br/>
 
         <Daily 
-            summary={this.state.dailyWeather.summary}
-
             day1Date={this.state.day1Date}
             day1Weather={this.state.day1Weather.summary}
             day1Temp={this.state.day1Weather.temperatureHigh}

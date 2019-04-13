@@ -1,3 +1,36 @@
+.forecast {
+    display: grid;
+    grid-template-columns: auto 64px;
+    grid-template-rows: repeat(4, auto);
+    padding: 10px;
+}
+
+.header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    padding: 5px;
+}
+
+
+.high {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    padding: 5px;
+}
+
+.feels {
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    padding: 5px;
+}
+
+.icon {
+    height: 32px;
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    padding: 10px;
+}
+
 .dayOne {
     background-color: lightblue;
 }
@@ -9,3 +42,4 @@
 .dayThree {
     background-color: gray;
 }
+
