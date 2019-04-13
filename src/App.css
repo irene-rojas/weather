@@ -17,6 +17,8 @@
     display: grid;
     grid-template-columns: auto 125px;
     grid-template-rows: 100px;
+    padding: 25px 0px 10px 0px;
+    border-bottom: 10px solid #f1543f;
 }
 
 h1 {
@@ -37,7 +39,6 @@ h1 {
     grid-column: 1/-1;
     grid-row: 2/3;
     padding: 10px;
-    margin-bottom: 25px;
 }
 
 .daily {
