@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Current from "./components/Current/Current";
-// import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
 import moment from 'moment';
+import map from "./map.png";
 
 class App extends Component {
 
@@ -119,10 +119,14 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1 id="weatherTitle">Weather
-            <br/>
-            In Your Area
-        </h1>
+        <div className="header">
+            <h1 id="weatherTitle">Weather
+                <br/>
+                In Your Area
+            </h1>
+            
+            <img className="mapIcon" src={map} alt="map icon"/>
+        </div>
 
         <div className="current">
             <Current 
@@ -134,9 +138,6 @@ class App extends Component {
                 time={this.state.currentDate}
             />
         </div>
-
-        <br/>
-        <br/>
 
         <div className="daily">
             <Daily 

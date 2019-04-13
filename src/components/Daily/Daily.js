@@ -6,11 +6,10 @@ const Daily = (props) => {
     return (
 
         <div className="dailyDiv">
-            <strong id="dailyTitle">Three Day Forecast:</strong>
-            <br/>
+            <h3 id="dailyTitle">Three Day Forecast:</h3>
         
             <div className="dayOne forecast">
-                <div className="header">
+                <div className="dailyHeader">
                     <strong className="date">{props.day1Date}</strong> 
                     <div className="summary">{props.day1Weather}</div>
                 </div>
@@ -23,8 +22,8 @@ const Daily = (props) => {
                 <img className="icon" src={props.day1Icon} alt={props.day1IconAlt} /> 
             </div>
             
-            <div className="dayTwo forecast middle">
-                <div className="header">
+            <div className="dayTwo forecast">
+                <div className="dailyHeader">
                     <strong className="date">{props.day2Date}</strong> 
                     <div className="summary">{props.day2Weather}</div>
                 </div>
@@ -38,7 +37,7 @@ const Daily = (props) => {
             </div>
 
             <div className="dayThree forecast">
-                <div className="header">
+                <div className="dailyHeader">
                     <strong className="date">{props.day3Date}</strong> 
                     <div className="summary">{props.day3Weather}</div>
                 </div>
