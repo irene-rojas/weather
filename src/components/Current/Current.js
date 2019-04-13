@@ -5,7 +5,7 @@ const Current = (props) => {
     return (
 
         <div className="currentWeather">
-            <strong>{props.time}</strong>
+            <strong>Current Weather:</strong>
             <br/>
             <strong>Summary:</strong> {props.summary}
             <br/>

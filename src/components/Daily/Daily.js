@@ -23,7 +23,7 @@ const Daily = (props) => {
                 <img className="icon" src={props.day1Icon} alt={props.day1IconAlt} /> 
             </div>
             
-            <div className="dayTwo forecast">
+            <div className="dayTwo forecast middle">
                 <div className="header">
                     <strong className="date">{props.day2Date}</strong> 
                     <div className="summary">{props.day2Weather}</div>

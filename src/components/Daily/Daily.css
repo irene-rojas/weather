@@ -11,7 +11,6 @@
     padding: 5px;
 }
 
-
 .high {
     grid-column: 1/-1;
     grid-row: 3/4;
@@ -31,15 +30,10 @@
     padding: 10px;
 }
 
-.dayOne {
-    background-color: lightblue;
+.middle {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-.dayTwo {
-    background-color: rgb(189, 101, 101);
-}
 
-.dayThree {
-    background-color: gray;
-}
-
+/* <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by lifeforstock - www.freepik.com</a> */

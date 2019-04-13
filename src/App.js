@@ -119,7 +119,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1>Weather</h1>
+        <h1 id="weatherTitle">Weather</h1>
 
         <Current 
             summary={this.state.currentWeather.summary}
@@ -156,16 +156,6 @@ class App extends Component {
             day3IconAlt={this.state.day3IconAlt}
 
         />
-
-        <br/>
-        <br/>
-
-        {/* <Hourly 
-            summary={this.state.hourlyWeather.summary}
-        /> */}
-
-        <br/>
-        <br/>
 
         <div className="footer">
             <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
