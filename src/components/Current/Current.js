@@ -5,7 +5,7 @@ const Current = (props) => {
     return (
 
         <div className="currentWeather">
-            <strong>Current Weather: {props.summary}</strong>
+            <strong className="currently">Current Weather: {props.summary}</strong>
 
             <div className="currentTemp">
                 <strong>Temperature:</strong> {parseInt(props.temp)}° F
@@ -13,7 +13,7 @@ const Current = (props) => {
             <div className="currentFeels">
                 <strong>Feels like:</strong> {parseInt(props.feels)}° F
             </div>
-            <img src={props.icon} alt={props.iconAlt} height="64px"/> 
+            <img className="currentIcon" src={props.icon} alt={props.iconAlt} /> 
         </div>
         
     )
