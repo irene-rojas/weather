@@ -119,43 +119,49 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1 id="weatherTitle">Weather</h1>
+        <h1 id="weatherTitle">Weather
+            <br/>
+            In Your Area
+        </h1>
 
-        <Current 
-            summary={this.state.currentWeather.summary}
-            temp={this.state.currentWeather.temperature}
-            feels={this.state.currentWeather.apparentTemperature}
-            icon={this.state.currentIcon}
-            iconAlt={this.state.currentIconAlt}
-            time={this.state.currentDate}
-        />
+        <div className="current">
+            <Current 
+                summary={this.state.currentWeather.summary}
+                temp={this.state.currentWeather.temperature}
+                feels={this.state.currentWeather.apparentTemperature}
+                icon={this.state.currentIcon}
+                iconAlt={this.state.currentIconAlt}
+                time={this.state.currentDate}
+            />
+        </div>
 
         <br/>
         <br/>
 
-        <Daily 
-            day1Date={this.state.day1Date}
-            day1Weather={this.state.day1Weather.summary}
-            day1Temp={this.state.day1Weather.temperatureHigh}
-            day1Feels={this.state.day1Weather.apparentTemperatureHigh}
-            day1Icon={this.state.day1Icon}
-            day1IconAlt={this.state.day1IconAlt}
+        <div className="daily">
+            <Daily 
+                day1Date={this.state.day1Date}
+                day1Weather={this.state.day1Weather.summary}
+                day1Temp={this.state.day1Weather.temperatureHigh}
+                day1Feels={this.state.day1Weather.apparentTemperatureHigh}
+                day1Icon={this.state.day1Icon}
+                day1IconAlt={this.state.day1IconAlt}
 
-            day2Date={this.state.day2Date}
-            day2Weather={this.state.day2Weather.summary}
-            day2Temp={this.state.day2Weather.temperatureHigh}
-            day2Feels={this.state.day2Weather.apparentTemperatureHigh}
-            day2Icon={this.state.day2Icon}
-            day2IconAlt={this.state.day2IconAlt}
+                day2Date={this.state.day2Date}
+                day2Weather={this.state.day2Weather.summary}
+                day2Temp={this.state.day2Weather.temperatureHigh}
+                day2Feels={this.state.day2Weather.apparentTemperatureHigh}
+                day2Icon={this.state.day2Icon}
+                day2IconAlt={this.state.day2IconAlt}
 
-            day3Date={this.state.day3Date}
-            day3Weather={this.state.day3Weather.summary}
-            day3Temp={this.state.day3Weather.temperatureHigh}
-            day3Feels={this.state.day3Weather.apparentTemperatureHigh}
-            day3Icon={this.state.day3Icon}
-            day3IconAlt={this.state.day3IconAlt}
-
-        />
+                day3Date={this.state.day3Date}
+                day3Weather={this.state.day3Weather.summary}
+                day3Temp={this.state.day3Weather.temperatureHigh}
+                day3Feels={this.state.day3Weather.apparentTemperatureHigh}
+                day3Icon={this.state.day3Icon}
+                day3IconAlt={this.state.day3IconAlt}
+            />
+        </div>
 
         <div className="footer">
             <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>

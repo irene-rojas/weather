@@ -4,11 +4,64 @@
   background-color: white;
   opacity: .60;
   height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr) auto;
+  grid-template-columns: 1fr;
 }
 
 h1 {
     margin: 0px;
-    padding: 20px;
+    padding: 10px;
 }
+
+#weatherTitle {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+
+.current {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.daily {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+}
+
+.footer {
+    grid-column: 1/-1;
+    grid-row: 5/-1;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
+
 
 /* clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night */

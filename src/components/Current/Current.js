@@ -5,16 +5,15 @@ const Current = (props) => {
     return (
 
         <div className="currentWeather">
-            <strong>Current Weather:</strong>
-            <br/>
-            <strong>Summary:</strong> {props.summary}
-            <br/>
-            <strong>Temperature:</strong> {parseInt(props.temp)}° F
-            <br/>
-            <strong>Feels like:</strong> {parseInt(props.feels)}° F
-            <br/>
-            <br/>
-            <img src={props.icon} alt={props.iconAlt} height="64px"/> 
+            <strong className="currently">Current Weather: {props.summary}</strong>
+
+            <div className="currentTemp">
+                <strong>Temperature:</strong> {parseInt(props.temp)}° F
+            </div>
+            <div className="currentFeels">
+                <strong>Feels like:</strong> {parseInt(props.feels)}° F
+            </div>
+            <img className="currentIcon" src={props.icon} alt={props.iconAlt} /> 
         </div>
         
     )
