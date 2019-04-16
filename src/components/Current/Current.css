@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: auto 80px;
     grid-template-rows: repeat(4, auto);
+    justify-self: center;
 }
 
 h3 {
