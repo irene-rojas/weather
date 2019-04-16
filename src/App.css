@@ -53,7 +53,21 @@ h1 {
 }
 
 
+@media (min-width: 450px) {
 
+    .App {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr) auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header {
+        /* in App */
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+}
 
 
 
