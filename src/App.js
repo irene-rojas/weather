@@ -130,7 +130,7 @@ class App extends Component {
 
         <div className="current">
             <Current 
-                summary={this.state.currentWeather.summary}
+                summary={this.state.currentWeather.summary} 
                 temp={this.state.currentWeather.temperature}
                 feels={this.state.currentWeather.apparentTemperature}
                 icon={this.state.currentIcon}
