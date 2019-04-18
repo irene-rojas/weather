@@ -1,4 +1,5 @@
 @media (max-width: 767px) {
+
     .App {
         text-align: center;
         margin: 0 auto;
@@ -47,6 +48,7 @@
         grid-column: 1/-1;
         grid-row: 3/4;
         margin-top: 10px;
+        border-top: 5px solid #f1543f;
     }
 
     .footer {
@@ -54,24 +56,8 @@
         grid-row: 5/-1;
         padding: 10px;
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
