@@ -8,11 +8,13 @@ const Current = (props) => {
             <h3 className="currently">Current Weather: {props.summary}</h3>
 
             <div className="currentTemp">
-                <strong>Temperature:</strong> {parseInt(props.temp)}° F
+                <strong>Temperature: {parseInt(props.temp)}° F</strong>
             </div>
+
             <div className="currentFeels">
-                <strong>Feels like:</strong> {parseInt(props.feels)}° F
+                <strong>Feels like: {parseInt(props.feels)}° F</strong>
             </div>
+
             <img className="currentIcon" src={props.icon} alt={props.iconAlt} /> 
         </div>
         

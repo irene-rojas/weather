@@ -1,34 +1,42 @@
-.currentWeather {
-    display: grid;
-    grid-template-columns: auto 80px;
-    grid-template-rows: repeat(4, auto);
-    justify-self: center;
-}
+/* mobile */
+@media (max-width: 767px) {
 
-h3 {
-    margin: 0px;;
-}
-.currently {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    padding: 5px;
-}
+    .currentWeather {
+        display: grid;
+        grid-template-columns: auto 80px;
+        grid-template-rows: repeat(3, auto);
+    }
 
-.currentTemp {
-    grid-column: 1/-1;
-    grid-row: 2/3;
-    padding: 5px;
-}
+    h3 {
+        margin: 0px;;
+    }
 
-.currentFeels {
-    grid-column: 1/-1;
-    grid-row: 3/4;
-    padding: 5px;
-}
+    .currently {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        padding: 10px;
+        justify-self: center;
+    }
 
-.currentIcon {
-    height: 64px;
-    grid-column: 2/3;
-    grid-row: 2/-1;
-    padding: 0px  10px 10px 0px;
+    .currentTemp {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 5px 10px 5px 10px;
+        justify-self: center;
+    }
+
+    .currentFeels {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        padding: 5px 10px 5px 10px;
+        justify-self: center;
+    }
+
+    .currentIcon {
+        height: 64px;
+        grid-column: 2/3;
+        grid-row: 2/-1;
+        padding: 5px;
+    }
+
 }
