@@ -14,7 +14,7 @@
     .currently {
         grid-column: 1/-1;
         grid-row: 1/2;
-        padding: 10px;
+        padding: 10px 0px 10px 0px;
         justify-self: center;
     }
 
@@ -37,6 +37,7 @@
         grid-column: 2/3;
         grid-row: 2/-1;
         padding: 5px;
+        justify-self: left;
     }
 
 }
