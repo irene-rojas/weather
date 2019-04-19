@@ -3,9 +3,10 @@
 
     .forecast {
         display: grid;
-        grid-template-columns: auto 64px;
+        grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(4, auto);
         padding: 10px;
+        word-wrap: break-word;
     }
     
     #dailyTitle {
@@ -16,6 +17,7 @@
         grid-column: 1/-1;
         grid-row: 1/2;
         padding: 5px;
+        justify-self: center;
     }
     
     .high {
@@ -57,9 +59,10 @@
 
     .forecast {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 200px;
         grid-template-rows: repeat(4, auto);
-        padding: 10px;
+        padding: 20px;
+        word-wrap: break-word;
     }
 
     .dailyHeader {
@@ -89,8 +92,9 @@
 
     .dailyDiv {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(2, auto);
+        word-wrap: break-word;
     }
 
     #dailyTitle {
