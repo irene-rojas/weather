@@ -76,7 +76,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    
+
     .App {
         text-align: center;
         margin: 0 auto;
@@ -116,7 +116,7 @@
 
     .footer {
         grid-column: 1/-1;
-        grid-row: 5/-1;
+        grid-row: 4/5;
         padding: 10px;
         justify-self: center;
     }
