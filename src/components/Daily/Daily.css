@@ -49,50 +49,84 @@
     .dayThree {
         border-bottom: 1px solid black;
     }
+
 }
 
 
-/* landscape */
-/* .dailyDiv {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, auto);
-} */
+@media (min-width: 768px) {
 
-/* #dailyTitle {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    justify-self: center;
-    margin: 5px;
-} */
+    .forecast {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        padding: 10px;
+    }
 
-/* .icon {
-    height: 64px;
-} */
+    .dailyHeader {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        padding: 5px;
+    }
 
-/* .dayOne {
-    in dailyDiv
-    grid-column: 1/2;
-    grid-row: 2/-1;
-    padding: 10px;
-} */
+    .high {
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        padding: 5px;
+    }
 
-/* .dayTwo {
-    in dailyDiv
-    grid-column: 2/3;
-    grid-row: 2/-1;
-    padding: 10px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    .feels {
+        grid-column: 1/-1;
+        grid-row: 3/4;
+        padding: 5px;
+    }
 
-} */
+    .icon {
+        height: 32px;
+        grid-column: 1/-1;
+        grid-row: 4/5;
+        justify-self: center;
+    }
 
-/* .dayThree {
-    in dailyDiv
-    grid-column: 3/4;
-    grid-row: 2/-1;
-    padding: 10px;
-} */
+    .dailyDiv {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    #dailyTitle {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        padding: 5px;
+    }
+
+    .dayOne {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .dayTwo {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .dayThree {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
