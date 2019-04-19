@@ -1,1 +1,1 @@
-Dark Sky API
+This is a weather app that requests a user's geographic location, then uses the Dark Sky API to return current and upcoming weather forecasts. It was made with React.
