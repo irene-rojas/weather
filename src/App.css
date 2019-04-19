@@ -1,5 +1,13 @@
 @media (max-width: 767px) {
 
+    .parallax {
+        height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .App {
         text-align: center;
         margin: 0 auto;
@@ -61,6 +69,14 @@
 
 @media (min-width: 768px) {
 
+    .parallax {
+        height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
     .App {
         text-align: center;
         margin: 0 auto;
@@ -81,7 +97,7 @@
         display: grid;
         grid-template-columns: auto 125px;
         grid-template-rows: 100px;
-        padding: 20px 0px 10px 0px;
+        padding: 20px 0px 0px 0px;
         border-bottom: 10px solid #f1543f;
     }
 

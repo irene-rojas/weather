@@ -39,6 +39,10 @@
         padding: 10px;
     }
     
+    .dailyDiv {
+        border-top: 10px solid #f1543f;
+    }
+
     .dayOne {
         border-top: 1px solid black;
     }
@@ -88,6 +92,7 @@
         grid-column: 1/-1;
         grid-row: 4/5;
         justify-self: center;
+        padding: 10px;
     }
 
     .dailyDiv {
@@ -95,6 +100,7 @@
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(2, auto);
         word-wrap: break-word;
+        border-top: 10px solid #f1543f;
     }
 
     #dailyTitle {
