@@ -5,10 +5,12 @@ import Current from "./components/Current/Current";
 import Daily from "./components/Daily/Daily";
 import moment from 'moment';
 import map from "./map.png";
+import spinning from "./spinning.gif";
 
 class App extends Component {
 
     state = {
+        loading: false,
         // location
         lat: "",
         lng: "",
@@ -38,8 +40,6 @@ class App extends Component {
         day3IconAlt: "",
         day3UnixTime: "",
         day3Date: "",
-
-
         // hourly
         hourlyWeather: [],
     }
@@ -62,6 +62,7 @@ class App extends Component {
     }
 
     apiCall = () => {
+        this.setState({loading: true})
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
         .then(res => {
             const result = res.data;
@@ -98,6 +99,8 @@ class App extends Component {
                 hourlyWeather: result.hourly,
             });
             this.getDates();
+        }).then(() => {
+            this.setState({loading:false})
         })
     }
 
@@ -140,6 +143,8 @@ class App extends Component {
                         iconAlt={this.state.currentIconAlt}
                         time={this.state.currentDate}
                     />
+                    
+                    {this.state.loading === true && <img className="spinner" src={spinning} alt="loading"/>}
                 </div>
 
                 <div className="daily">
@@ -165,6 +170,9 @@ class App extends Component {
                         day3Icon={this.state.day3Icon}
                         day3IconAlt={this.state.day3IconAlt}
                     />
+
+                    {this.state.loading === true && <img className="spinner" src={spinning} alt="loading"/>}
+
                 </div>
 
                 <div className="footer">
