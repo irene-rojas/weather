@@ -64,6 +64,10 @@
         padding: 10px;
     }
 
+    .spinner {
+        width: 50px;
+    }
+
 }
 
 
@@ -133,7 +137,9 @@
         padding-top: 10px;
     }
 
-
+    .spinner {
+        width: 50px;
+    }
 
 }
 
