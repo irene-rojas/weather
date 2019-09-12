@@ -1,0 +1,15 @@
+{
+  "main.css": "/weather/static/css/main.1e9530da.chunk.css",
+  "main.js": "/weather/static/js/main.600d16c6.chunk.js",
+  "main.js.map": "/weather/static/js/main.600d16c6.chunk.js.map",
+  "runtime~main.js": "/weather/static/js/runtime~main.6cff1e35.js",
+  "runtime~main.js.map": "/weather/static/js/runtime~main.6cff1e35.js.map",
+  "static/js/2.244cccb9.chunk.js": "/weather/static/js/2.244cccb9.chunk.js",
+  "static/js/2.244cccb9.chunk.js.map": "/weather/static/js/2.244cccb9.chunk.js.map",
+  "index.html": "/weather/index.html",
+  "precache-manifest.622dca1e9f7f0260368321bfed04c8ae.js": "/weather/precache-manifest.622dca1e9f7f0260368321bfed04c8ae.js",
+  "service-worker.js": "/weather/service-worker.js",
+  "static/css/main.1e9530da.chunk.css.map": "/weather/static/css/main.1e9530da.chunk.css.map",
+  "static/media/map.png": "/weather/static/media/map.7fb75570.png",
+  "static/media/spinning.gif": "/weather/static/media/spinning.bea2d77d.gif"
+}
