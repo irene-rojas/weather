@@ -5,7 +5,7 @@ const Daily = (props) => {
 
     return (
 
-        <div className="dailyDiv">
+        <section className="dailyDiv">
             <h3 id="dailyTitle">Three Day Forecast:</h3>
         
             <div className="dayOne forecast">
@@ -50,7 +50,7 @@ const Daily = (props) => {
                 <img className="icon" src={props.day3Icon} alt={props.day3IconAlt} /> 
             </div>
 
-        </div>
+        </section>
     )
 }
 

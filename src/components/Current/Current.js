@@ -4,7 +4,7 @@ import './Current.css';
 const Current = (props) => {
     return (
 
-        <div className="currentWeather">
+        <section className="currentWeather">
             <h3 className="currently">Current Weather: {props.summary}</h3>
 
             <div className="currentTemp">
@@ -16,7 +16,7 @@ const Current = (props) => {
             </div>
 
             <img className="currentIcon" src={props.icon} alt={props.iconAlt} /> 
-        </div>
+        </section>
         
     )
 }
