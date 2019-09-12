@@ -125,16 +125,16 @@ class App extends Component {
 
             <div className="App">
 
-                <div className="header">
+                <header className="header">
                     <h1 id="weatherTitle">Weather
                         <br/>
                         In Your Area
                     </h1>
                     
                     <img className="mapIcon" src={map} alt="map icon"/>
-                </div>
+                </header>
 
-                <div className="current">
+                <section className="current">
                     <Current 
                         summary={this.state.currentWeather.summary} 
                         temp={this.state.currentWeather.temperature}
@@ -145,9 +145,9 @@ class App extends Component {
                     />
                     
                     {this.state.loading === true && <img className="spinner" src={spinning} alt="loading"/>}
-                </div>
+                </section>
 
-                <div className="daily">
+                <section className="daily">
                     <Daily 
                         day1Date={this.state.day1Date}
                         day1Weather={this.state.day1Weather.summary}
@@ -173,11 +173,11 @@ class App extends Component {
 
                     {this.state.loading === true && <img className="spinner" src={spinning} alt="loading"/>}
 
-                </div>
+                </section>
 
-                <div className="footer">
+                <footer className="footer">
                     <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
-                </div>
+                </footer>
 
             </div>
             
